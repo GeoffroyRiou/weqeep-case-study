@@ -27,9 +27,10 @@ class ElectricityMapsService
     /**
      * Makes a GET request to the Electricity Maps API.
      *
-     * @param string $endpoint The API endpoint to call.
-     * @param array<string, string> $params Optional query parameters for the request.
+     * @param  string  $endpoint  The API endpoint to call.
+     * @param  array<string, string>  $params  Optional query parameters for the request.
      * @return array<string, mixed> The JSON response decoded into an associative array.
+     *
      * @throws GuzzleException If the HTTP request fails.
      */
     private function doRequest(string $endpoint, array $params = []): array
@@ -37,12 +38,13 @@ class ElectricityMapsService
         $response = $this->client->request('GET', $endpoint, [
             'query' => $params,
         ]);
+
         return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
-     *
      * @return array<string, mixed> The JSON response decoded into an associative array.
+     *
      * @throws GuzzleException If the HTTP request fails.
      */
     public function getPowerBreakdown(string $zone): array
@@ -53,8 +55,8 @@ class ElectricityMapsService
     }
 
     /**
-     *
      * @return array<string, mixed> The JSON response decoded into an associative array.
+     *
      * @throws GuzzleException If the HTTP request fails.
      */
     public function getCarbonIntensity(string $zone): array

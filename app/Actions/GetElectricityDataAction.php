@@ -30,7 +30,6 @@ final class GetElectricityDataAction
                 ]);
             }
 
-
             $carbonIntensityData = $this->electricityMapsService->getCarbonIntensity($zone);
             $carbonIntensity = ElectricityData::byZone($zone)
                 ->byDataType(ElectricityDataTypes::CARBON_INTENSITY->value)
@@ -48,7 +47,8 @@ final class GetElectricityDataAction
             }
         } catch (GuzzleException $e) {
             // Handle the exception, e.g., log it or rethrow it
-            Log::error("Failed to fetch electricity data for zone {$zone}: " . $e->getMessage());
+            Log::error("Failed to fetch electricity data for zone {$zone}: ".$e->getMessage());
+
             return;
         }
     }

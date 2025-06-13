@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Actions\GetElectricityDataAction;
 use App\Services\ElectricityMapsService;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

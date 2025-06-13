@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 final class ElectricityData extends Model
 {
-
     protected $fillable = [
         'zone',
         'data_type',
@@ -17,12 +17,20 @@ final class ElectricityData extends Model
         'data' => 'array',
     ];
 
-    public function scopeByZone($query, string $zone)
+    /**
+     * @param  Builder<$this>  $query
+     * @return Builder<$this>
+     */
+    public function scopeByZone(Builder $query, string $zone): Builder
     {
         return $query->where('zone', $zone);
     }
 
-    public function scopeByDataType($query, string $dataType)
+    /**
+     * @param  Builder<$this>  $query
+     * @return Builder<$this>
+     */
+    public function scopeByDataType(Builder $query, string $dataType): Builder
     {
         return $query->where('data_type', $dataType);
     }
