@@ -1,8 +1,8 @@
 import AlertMessage from '@/components/alert-message';
 import Panel from '@/components/panel';
-import { type ElectricityMapsData, type ElectricityMapsDataType } from '@/types/electricitymaps';
+import { CarbonIntensityDataContent, type ElectricityMapsData, type ElectricityMapsDataType } from '@/types';
 import { usePage } from '@inertiajs/react';
-import FRFlag from '../../svgs/fr.svg';
+import FRFlag from '@/svgs/fr.svg';
 import { useEffect, useState } from 'react';
 import CarbonIntensity from '@/components/carbon-intensity';
 import PowerBreakdown from '@/components/power-breakdown';
@@ -32,7 +32,7 @@ export default function Dashboard() {
         if (!currentData) return null;  
 
         if (currentData.data_type === 'carbon_intensity') {
-            return <CarbonIntensity />;
+            return <CarbonIntensity data={currentData.data as CarbonIntensityDataContent} />;
         } else if (currentData.data_type === 'power_breakdown') {
             return <PowerBreakdown />;
         }
