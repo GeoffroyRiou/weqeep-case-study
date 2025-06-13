@@ -27,6 +27,7 @@ This is a Laravel-based project with inertia and React.
    cp .env.example .env
    php artisan key:generate
    ```
+   /!\ Add you API key to connect to Electricity maps API
 
 4. **Configure your `.env` file as needed.**
 
