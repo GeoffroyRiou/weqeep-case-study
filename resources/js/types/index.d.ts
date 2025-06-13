@@ -1,6 +1,6 @@
-type ElectricityMapsDataType = "power_breakdown" | "carbon_intensity";
+export type ElectricityMapsDataType = "power_breakdown" | "carbon_intensity";
 
-type ElectricityMapsData = {
+export type ElectricityMapsData = {
     id: number;
     zone: string;
     data_type: ElectricityMapsDataType;
@@ -9,7 +9,7 @@ type ElectricityMapsData = {
     updated_at: string;
 };
 
-type EnergyBreakdown = {
+export type EnergyBreakdown = {
     nuclear: number | null;
     geothermal: number | null;
     biomass: number | null;
@@ -23,11 +23,11 @@ type EnergyBreakdown = {
     "hydro discharge": number | null;
     "battery discharge": number | null;
 };
-type PowerImportExportBreakdown = {
+export type PowerImportExportBreakdown = {
     [countryCode: string]: number;
 };
 
-type PowerBreakdownDataContent = {
+export type PowerBreakdownDataContent = {
     zone: string;
     datetime: string;
     updatedAt: string;
@@ -46,7 +46,7 @@ type PowerBreakdownDataContent = {
     estimationMethod: string;
 };
 
-type CarbonIntensityDataContent = {
+export type CarbonIntensityDataContent = {
     zone: string;
     carbonIntensity: number;
     datetime: string;
@@ -56,14 +56,3 @@ type CarbonIntensityDataContent = {
     isEstimated: boolean;
     estimationMethod: string;
 };
-
-export type {
-    ElectricityMapsDataType,
-    ElectricityMapsData,
-    PowerBreakdownDataContent,
-    CarbonIntensityDataContent,
-    EnergyBreakdown,
-    PowerImportExportBreakdown
-};
-
-export default ElectricityMapsData;
