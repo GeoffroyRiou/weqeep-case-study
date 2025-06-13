@@ -27,6 +27,7 @@ This is a Laravel-based project with inertia and React.
    cp .env.example .env
    php artisan key:generate
    ```
+   /!\ Add you API key to connect to Electricity maps API
 
 4. **Configure your `.env` file as needed.**
 
@@ -36,6 +37,14 @@ This is a Laravel-based project with inertia and React.
 5. **Run database migrations:**
    ```sh
    php artisan migrate
+   ```
+6. **Setup a Cron job for electricity data fetching:**
+   ```sh
+   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+   ```
+7. **You can fetch the same data running the following command:**
+   ```sh
+   php artisan getelectricitydata
    ```
 
 ## Code Quality
