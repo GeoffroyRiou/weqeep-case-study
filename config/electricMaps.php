@@ -6,7 +6,7 @@ return [
 
     // In a paid version we could add more countries
     // For now we only support France
-    'countries' => [
-        'FR' => 'France',
+    'zones' => [
+        'FR',
     ],
 ];

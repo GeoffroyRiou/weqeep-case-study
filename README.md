@@ -38,6 +38,14 @@ This is a Laravel-based project with inertia and React.
    ```sh
    php artisan migrate
    ```
+6. **Setup a Cron job for electricity data fetching:**
+   ```sh
+   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+   ```
+7. **You can fetch the same data running the following command:**
+   ```sh
+   php artisan getelectricitydata
+   ```
 
 ## Code Quality
 
