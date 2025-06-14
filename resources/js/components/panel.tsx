@@ -4,9 +4,9 @@ type PanelProps = PropsWithChildren & {
     className?: string;
 }
 
-const Panel : React.FC<PanelProps> = ({ children, className }) => {
+const Panel = ({ children, className } : PanelProps) => {
   return (
-    <section className={`bg-white/80 backdrop-blur shadow-md rounded-lg p-6 h-full lg:p-10 ${className}`}>
+    <section className={`bg-white/60 backdrop-blur shadow-md p-6 h-full lg:p-10 ${className}`}>
         {children}
     </section>
   );

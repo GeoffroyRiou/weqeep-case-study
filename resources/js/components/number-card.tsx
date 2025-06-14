@@ -6,7 +6,7 @@ const NumberCard = (props: {
 }) => {
     return (
         <div>
-            <div className={`bg-white p-4 size-40 rounded-full shadow-md flex items-center justify-center flex-col ${props.className}`}>
+            <div className={`bg-white/80 p-4 h-40 border border-lime-500 rounded-lg flex items-center justify-center flex-col ${props.className}`}>
                 <div className="text-5xl font-bold text-lime-500">
                     {props.value}
                 </div>
