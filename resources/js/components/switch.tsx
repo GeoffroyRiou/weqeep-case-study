@@ -4,6 +4,7 @@ type SwitchProps = {
     checked: boolean;
     onChange: (checked: boolean) => void;
     className?: string;
+    label?: string;
 }
 const Switch = (props: SwitchProps) => {
     return (
@@ -21,6 +22,9 @@ const Switch = (props: SwitchProps) => {
                     }`}
                 ></span>
             </div>
+            <span className="ml-3 text-sm text-zinc-500">
+                {props.label}
+            </span>
         </label>
     );
 }
