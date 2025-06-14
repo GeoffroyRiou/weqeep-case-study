@@ -17,7 +17,7 @@ const ProgressBar = (props: ProgressBarProps) => {
                     {props.label}
                 </div>
             )}
-            <div className="bg-zinc-200 rounded-lg w-full relative">
+            <div className="bg-zinc-300 rounded-lg w-full relative">
                 <div className="bg-lime-500 h-5 rounded-lg" style={{ width: `${percentage}%` }}></div>
                 <span className="absolute top-1/2 left-2 -translate-y-1/2 text-xs text-zinc-600 flex gap-1">
                     {props.value} {props.unit || ''}

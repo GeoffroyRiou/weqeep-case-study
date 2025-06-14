@@ -26,7 +26,7 @@ const PowerBreakdown = ({ data }: PowerBreakdownProps) => {
       <DataTitle title="Power Consumption Breakdown" subtitle="Actual Power Consumption Breakdown" />
 
       <Switch label="Sort in ascending order" checked={sortOrder === 'asc'} onChange={(checked) => setSortOrder(checked ? 'asc' : 'desc')} />
-
+        
       {data.powerConsumptionBreakdown && (
         <div className="flex flex-col gap-2">
           {sortedEnergyData.map(([key, value]) => (

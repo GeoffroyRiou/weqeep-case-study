@@ -1,10 +1,10 @@
 import AlertMessage from '@/components/alert-message';
 import Panel from '@/components/panel';
-import { 
-    type CarbonIntensityDataContent, 
-    type PowerBreakdownDataContent, 
-    type ElectricityMapsData, 
-    type ElectricityMapsDataType 
+import {
+    type CarbonIntensityDataContent,
+    type PowerBreakdownDataContent,
+    type ElectricityMapsData,
+    type ElectricityMapsDataType
 } from '@/types';
 import { usePage } from '@inertiajs/react';
 import FRFlag from '@/svgs/fr.svg';
@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import CarbonIntensity from '@/components/carbon-intensity';
 import PowerBreakdown from '@/components/power-breakdown';
 import Switch from '@/components/switch';
+import ChoicesToggle from '@/components/choices-toggle';
 
 type DashboardSharedProps = {
     electricityMapsData: ElectricityMapsData[];
@@ -30,8 +31,8 @@ export default function Dashboard() {
         }
     }, [electricityMapsData, dataType]);
 
-    const handleDataTypeChange = (checked: boolean) => {
-        setDataType(checked ? 'power_breakdown' : 'carbon_intensity');
+    const handleDataTypeChange = (type: string) => {
+        setDataType(type as ElectricityMapsDataType);
     };
 
     const renderDataContent = () => {
@@ -51,12 +52,11 @@ export default function Dashboard() {
                     <img src={FRFlag} alt="" width={30} height={30} />
                     <h1 className="text-2xl font-bold">France</h1>
                 </div>
-
-                <div className="flex gap-2">
-                    <span className="text-sm text-gray-700">Carbon Intensity</span>
-                    <Switch checked={dataType === 'power_breakdown'} onChange={handleDataTypeChange} />
-                    <span className="text-sm text-gray-700">Power Breakdown</span>
-                </div>
+                
+                <ChoicesToggle choices={[
+                    { label: 'Carbon Intensity', value: 'carbon_intensity' },
+                    { label: 'Power Breakdown', value: 'power_breakdown' }
+                ]} value={dataType} onChange={handleDataTypeChange} />
 
                 <div className="max-h-full overflow-y-auto pr-4">
 
