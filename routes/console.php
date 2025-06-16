@@ -15,4 +15,4 @@ Artisan::command('getelectricitydata', function () {
 /**
  * Fetch electricity data every ten minutes.
  */
-Schedule::command('getelectricitydata')->everyMinute();
+Schedule::command('getelectricitydata')->everyTenMinutes();
