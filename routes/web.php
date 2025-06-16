@@ -1,20 +1,6 @@
 <?php
 
-use App\Services\ElectricityMapsService;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('welcome');
-})->name('home');
-
-Route::get('/test', function () {
-    $api = app(ElectricityMapsService::class);
-
-    try {
-        $result = $api->getPowerBreakdown('FR');
-    } catch (Exception $e) {
-        dd('Error fetching data: '.$e->getMessage());
-    }
-    dd($result);
-})->name('test');
+Route::get('/', DashboardController::class)->name('home');
