@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
 
 Artisan::command('getelectricitydata', function () {
-
     $action = app(GetElectricityDataAction::class);
 
     foreach (config('electricMaps.zones') as $zone) {
@@ -16,6 +15,4 @@ Artisan::command('getelectricitydata', function () {
 /**
  * Fetch electricity data every ten minutes.
  */
-Schedule::call(function () {
-    $this->call('getelectricitydata');
-})->everyTenMinutes();
+Schedule::command('getelectricitydata')->everyMinute();
