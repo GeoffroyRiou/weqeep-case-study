@@ -1,6 +1,6 @@
 # Weqeep - Case study
 
-👉 The project involves creating an interface representing a dashboard with key information for France and Germany.
+👉 The project involves creating an interface representing a dashboard with key information about electricity for France.
 
 This is a Laravel-based project with inertia and React.
 
@@ -38,13 +38,13 @@ This is a Laravel-based project with inertia and React.
    ```sh
    php artisan migrate
    ```
-6. **Setup a Cron job for electricity data fetching:**
-   ```sh
-   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
-   ```
-7. **You can fetch the same data running the following command:**
+6. **You can fetch the electricity data running the following command:**
    ```sh
    php artisan getelectricitydata
+   ```
+7. **or set up a Cron job to automate the data fetching:**
+   ```sh
+   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
    ```
 
 ## Code Quality
