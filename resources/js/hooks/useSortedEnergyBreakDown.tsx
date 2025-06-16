@@ -11,17 +11,11 @@ const useSortedEnergyBreakdown = (energyBreakdown: EnergyBreakdown, sortOrder: S
 
     const sortedEnergyData = useMemo(() => {
 
-        // Removenull values and convert to entries for the comparison below
+        // Remove null values and convert to entries for the comparison below
         const entries = Object.entries(energyBreakdown).filter(([key, value]) => value !== null) as [string, number][];
 
         // Sort the entries based on the value
-        entries.sort((a, b) => {
-            if (sortOrder === 'asc') {
-                return a[1] - b[1];
-            } else {
-                return b[1] - a[1];
-            }
-        });
+        entries.sort((a, b) => sortOrder === 'asc' ? a[1] - b[1] : b[1] - a[1]);
 
         return entries;
     }, [energyBreakdown, sortOrder]);

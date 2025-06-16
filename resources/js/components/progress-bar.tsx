@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 
 type ProgressBarProps = {
     label?: string;
@@ -7,8 +8,11 @@ type ProgressBarProps = {
     className?: string;
 }
 const ProgressBar = (props: ProgressBarProps) => {
-    
-    const percentage = ((props.value / props.max) * 100).toFixed(2);
+
+    const percentage = useMemo(
+        () => ((props.value / props.max) * 100).toFixed(2),
+        [props.value, props.max]
+    );
 
     return (
         <div className={`grid grid-cols-3 gap-1 lg:grid-cols-4  ${props.className}`}>

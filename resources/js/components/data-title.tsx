@@ -1,4 +1,3 @@
-
 const DataTitle = (props: { title: string; subtitle?: string }) => {
     return (
         <div className="flex flex-col gap-1">

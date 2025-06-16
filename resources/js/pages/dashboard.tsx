@@ -17,7 +17,6 @@ type DashboardSharedProps = {
     electricityMapsData: ElectricityMapsData[];
 }
 
-
 export default function Dashboard() {
     const { electricityMapsData } = usePage<DashboardSharedProps>().props;
     const [dataType, setDataType] = useState<ElectricityMapsDataType>('carbon_intensity');

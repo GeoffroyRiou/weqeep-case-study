@@ -1,8 +1,8 @@
-
-const AlertMessage = (props: {
-  message: string
-  type?: 'info' | 'warning' | 'error' | 'success'
-}) => {
+type AlertMessageProps = {
+  message: string;
+  type?: 'info' | 'warning' | 'error' | 'success';
+};
+const AlertMessage = (props: AlertMessageProps) => {
 
   const typeClasses = {
     info: 'text-blue-600 bg-blue-100 border-blue-300',
